@@ -99,14 +99,13 @@ export default {
     async submitForm() {
       this.submitting = true
       try {
-        const response = await axios.post('http://localhost/project-ict12267/php_api/show_contact.php', this.form)
+        const response = await axios.post('http://localhost/db_shop-main/php_api/show_contact.php', this.form)
         
-        // เช็คผลลัพธ์จาก PHP API (ปรับเงื่อนไขตามความเหมาะสมของ API)
-        if (response.data.status === 'success' || response.status === 200) {
+        if (response.data.status === 'success') {
           alert('บันทึกข้อมูลสำเร็จ!')
           this.$router.push('/contact') // บันทึกเสร็จแล้วเด้งกลับไปหน้าตาราง
         } else {
-          alert('เกิดข้อผิดพลาดในการบันทึกข้อมูล')
+          alert(response.data.message || 'เกิดข้อผิดพลาดในการบันทึกข้อมูล')
         }
       } catch (error) {
         console.error('Error adding contact:', error)

@@ -57,7 +57,7 @@ export default {
     // ฟังก์ชันดึงข้อมูลจาก API ด้วย GET
     const fetchEmployee = async () => {
       try {
-        const response = await fetch("http://localhost/project-ict12267/php_api/api_employee.php", {
+        const response = await fetch("http://localhost/db_shop-main/php_api/show_employee.php", {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -92,7 +92,7 @@ const deleteEmployee = async (id) => {
   if (!confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่?")) return;
 
   try {
-    const response = await fetch("http://localhost/project-ict12267/php_api/api_employee.php", {
+    const response = await fetch("http://localhost/db_shop-main/php_api/show_employee.php", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"

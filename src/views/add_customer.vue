@@ -47,7 +47,7 @@ export default {
   methods: {
     async addCustomer() {
       try {
-        const res = await fetch("http://localhost/project-ict12267/php_api/api_customer.php", {
+        const res = await fetch("http://localhost/db_shop-main/php_api/api_customer.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(this.customer)

@@ -47,7 +47,7 @@ export default {
   methods: {
     async addEmployee() {
       try {
-        const res = await fetch("http://localhost/project-ict12267/php_api/api_employee.php", {
+        const res = await fetch("http://localhost/db_shop-main/php_api/api_employee.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(this.employee)

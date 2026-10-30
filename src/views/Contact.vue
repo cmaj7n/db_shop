@@ -39,7 +39,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(item, index) in customers" :key="item.customer_id || index">
+              <tr v-for="(item, index) in customers" :key="item.contact_id || index">
                 <td>{{ index + 1 }}</td>
                 <td><span class="id-badge">#{{ item.contact_id }}</span></td>
                 <td>{{ item.subject }}</td>   <!-- ชื่อ -->
@@ -74,8 +74,8 @@ export default {
   methods: {
     async fetchCustomers() {
       try {
-        const response = await axios.get('http://localhost/project-ict12267/php_api/show_contact.php')
-        this.customers = response.data
+        const response = await axios.get('http://localhost/db_shop-main/php_api/show_contact.php')
+        this.customers = Array.isArray(response.data) ? response.data : []
       } catch (err) {
         this.error = 'ไม่สามารถเชื่อมต่อดึงข้อมูลจากเซิร์ฟเวอร์ได้'
         console.error(err)
