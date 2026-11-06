@@ -17,6 +17,7 @@ const routes = [
   },
   {
     path: '/customer',
+    alias: '/customer_crud',
     name: 'customer',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -25,6 +26,7 @@ const routes = [
   },
   {
     path: '/employee',
+    alias: '/employee_crud',
     name: 'Employee',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -65,6 +67,7 @@ const routes = [
   },
   {
     path: '/product',
+    alias: '/show_product',
     name: 'product',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -78,6 +81,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/assets.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/login.vue')
   }
 ]
 
